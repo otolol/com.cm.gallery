@@ -1,0 +1,18 @@
+<xm-inifnite-scroll (scrolled)="onScroll($event)">
+  <ng-container *ngIf="images$ | async as images">
+    <xm-card
+      *ngFor="let img of images; trackBy: identity"
+      [id]="img.id"
+      (card)="addFavorite($event)"
+    ></xm-card>
+  </ng-container>
+  <div class="loading" *ngIf="isLoading$ | async">
+    <mat-progress-spinner
+      class="example-margin"
+      [color]="'primary'"
+      [mode]="'determinate'"
+      [value]="'70'"
+    >
+    </mat-progress-spinner>
+  </div>
+</xm-inifnite-scroll>

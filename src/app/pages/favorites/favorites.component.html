@@ -1,0 +1,6 @@
+<section class="favorites" *ngIf="(favorites$ | async) as favorites">
+  <xm-card *ngFor="let favId of favorites; trackBy: identity " style="display: inline-block"
+    [id]="favId"
+    (card)="onDetail($event)"
+  ></xm-card>
+</section>

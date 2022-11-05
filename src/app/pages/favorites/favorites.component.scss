@@ -1,0 +1,13 @@
+:host {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.favorites {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+}
